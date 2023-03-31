@@ -29,7 +29,7 @@ public class Temperatura {
 				
 			}
 			
-			else if (temp2>temp1){
+			else if (maior>temp1){
 			
 				maior = temp2;
 				
@@ -66,12 +66,15 @@ public class Temperatura {
 		
 		for(int i = 0; i < array.length; i++) {
 			
-				System.out.println("Maior Temperatura: "+maior);
-				System.out.println("Menor Temperatura: "+menor);
-				System.out.println(array[i]);
+			System.out.println("Maior Temperatura: "+maior);
+			System.out.println("Menor Temperatura: "+menor);
+			System.out.println(array[i]);
 
 			
 		}
+
+		
+		entrada.close();
 
 	}
 

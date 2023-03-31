@@ -5,38 +5,33 @@ import java.util.Scanner;
 public class Media_a {
 
 	public static void main(String[] args) {
-		int[] array = new int [1];
-		float num1,num2,num3;
-		float total=0;
+		float[] array = new float[1];
+		int quanti = 10;
+		float num1, num2, num3;
 		Scanner entrada = new Scanner(System.in);
-		
-		for(int i = 0; i <array.length;i++) {
-			
-			System.out.println("Quantidade: "+i);
+
+		for (int i = 0; i < array.length; i++) {
+
+			System.out.println("Quantidade: " + quanti);
 			System.out.println("Insira a primeira nota : ");
-			num1=entrada.nextFloat();
+			num1 = entrada.nextFloat();
 			System.out.println("Insira a segunda nota: ");
-			num2=entrada.nextFloat();
+			num2 = entrada.nextFloat();
 			System.out.println("Insira a terceira nota: ");
-			num3=entrada.nextFloat();
-			
-			array[i]=(int) (num1+num2+num3)/3;
-			
-			
-			
-			
+			num3 = entrada.nextFloat();
+			quanti--;
+
+			array[i] =  (num1 + num2 + num3) / 3;
+
 		}
-		
-		for(int i = 0; i<array.length;i++) {
-			
-			System.out.printf("media do [%d]: ",i);
-			System.out.println(array[i]);
-			
+
+		for (int i = 0; i < array.length; i++) {
+			quanti++;
+			System.out.printf("media do aluno [%d] %.2f: ",quanti ,array[i]);
+			System.out.println();
+
 		}
-		
-		
-		
-		
+		entrada.close();
 
 	}
 

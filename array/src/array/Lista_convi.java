@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Lista_convi {
 
 	public static void main(String[] args) {
-		String[] array = new String[3];
+		String[] array = new String[10];
 		Scanner entrada = new Scanner(System.in);
 		
 		
@@ -21,6 +21,8 @@ public class Lista_convi {
 			System.out.println(array[i]);
 			
 		}
+		
+		entrada.close();
 
 	}
 

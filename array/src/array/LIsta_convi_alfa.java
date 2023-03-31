@@ -27,6 +27,7 @@ public class LIsta_convi_alfa {
 			System.out.println(array[i]);
 			
 		}
+		entrada.close();
 
 	}
 
