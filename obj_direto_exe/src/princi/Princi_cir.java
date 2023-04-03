@@ -18,6 +18,8 @@ public class Princi_cir {
 		
 		System.out.println("este eh o volume do circulo");
 		System.out.println((float)area.getpericir());
+		
+		entrada.close();
 
 	}
 

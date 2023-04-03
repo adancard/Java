@@ -22,6 +22,8 @@ public class Nota {
 		
 		
 		System.out.println("esta eh a media final, "+ media.gettotal());
+		
+		entrada.close();
 
 	}
 

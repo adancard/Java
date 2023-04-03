@@ -47,6 +47,8 @@ public class Vendas {
 			System.out.println("R$"+venda.gettotal());
 			
 		}
+		
+		entrada.close();
 
 	}
 

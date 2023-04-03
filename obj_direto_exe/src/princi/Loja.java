@@ -50,6 +50,7 @@ public class Loja {
 			}
 
 		}
+		entrada.close();
 
 	}
 

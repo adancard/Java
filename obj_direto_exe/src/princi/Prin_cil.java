@@ -20,6 +20,8 @@ public class Prin_cil {
 
 		System.out.println("este eh seu volume");
 		System.out.println((float) area.getareacil());
+		
+		entrada.close();
 
 	}
 

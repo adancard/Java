@@ -125,6 +125,7 @@ public class Calculadora1 {
 				}
 
 			}
+			entrada.close();
 
 		}
 

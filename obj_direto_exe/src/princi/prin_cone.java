@@ -24,6 +24,8 @@ public class prin_cone {
 		
 		System.out.println("Este eh seu volume");
 		System.out.println((float)area.getperi());
+		
+		entrada.close();
 
 	}
 

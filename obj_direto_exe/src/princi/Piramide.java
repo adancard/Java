@@ -21,6 +21,8 @@ public class Piramide {
 		System.out.println("este eh o volume");
 		System.out.println(area.getVolume());
 		
+		entrada.close();
+		
 	}
 
 }
