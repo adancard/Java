@@ -21,7 +21,7 @@ public final class Eletronicos extends Estoque {
 	@Override
 	public String tostring() {
 		
-		return "ID: "+id+'\n'+super.tostring();
+		return "ID: "+id+'\n'+"Preco: "+getPreco()+'\n'+"Imposto: "+getImposto()+'\n'+super.tostring();
 		
 	}
 	

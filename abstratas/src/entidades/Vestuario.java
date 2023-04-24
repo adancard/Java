@@ -27,7 +27,7 @@ public class Vestuario extends Estoque {
 	public String tostring() {
 
 		return "Tamanho da Roupa: " + tamanho + '\n' + "ID: " + ID + '\n' + "Descricao: " + desc + '\n'
-		+ super.tostring();
+		+"Preco: "+getPreco()+'\n'+"Imposto: "+getImposto()+'\n'+ super.tostring();
 
 	}
 
