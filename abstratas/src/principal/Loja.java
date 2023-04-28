@@ -1,9 +1,7 @@
 package principal;
 
 import entidades.Vestuario;
-
 import java.util.Scanner;
-
 import entidades.Eletronicos;
 import entidades.Livro;
 
@@ -44,6 +42,7 @@ public class Loja {
 
 					System.out.println("Preco: ");
 					System.out.println(livro.calcularpreco());
+					System.out.println(" ");
 					break;
 
 				case 2:
@@ -65,6 +64,7 @@ public class Loja {
 
 					System.out.println("Preco: ");
 					System.out.println(livro.calcularpreco());
+					System.out.println(" ");
 					break;
 
 				case 2:
@@ -86,6 +86,7 @@ public class Loja {
 
 					System.out.println("Preco: ");
 					System.out.println(livro.calcularpreco());
+					System.out.println(" ");
 					break;
 
 				case 2:

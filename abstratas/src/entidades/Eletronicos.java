@@ -1,6 +1,6 @@
 package entidades;
 
-public final class Eletronicos extends Estoque {
+public class Eletronicos extends Estoque {
 	
 	private int id;
 	

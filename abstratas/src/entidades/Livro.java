@@ -1,6 +1,6 @@
 package entidades;
 
-public final class Livro extends Estoque {
+public class Livro extends Estoque {
 
 	private int Nid;
 	private String Na;
