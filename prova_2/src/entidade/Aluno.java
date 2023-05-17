@@ -9,12 +9,15 @@ public class Aluno extends pessoa {
 	private double nota;
 	private double media=0; 
 	private ArrayList<Double> notas = new ArrayList<Double>();
+	private diciplina descricao;
+
 	
 
-	public Aluno (String codigo,String nome,int cpf) {
+	public Aluno (String codigo,String nome,int cpf,diciplina descricao) {
 		
 		super(nome,cpf);
 		this.codigo=codigo;
+		this.descricao=descricao;
 
 		
 	}
@@ -69,13 +72,35 @@ public class Aluno extends pessoa {
 		return codigo;
 	}
 	
+	public enum diciplina {
+
+		FPOO("Programacao de orientacao de objeto"), LM("Linguagem de Marcacao"), SO("Sistema Operacional"),
+		REDES("Redes");
+
+		private String descricao;
+
+		private diciplina(String descricao) {
+
+			this.descricao = descricao;
+
+		}
+
+		public String getDescricao() {
+			return descricao;
+		}
+	}
+	
 	@Override
 	public void tostring() {
 		
 		System.out.println(nome);
 		System.out.println(cpf);
+		System.out.println(descricao.getDescricao());
 		
 	}
+	
+	
+
 	
 
 

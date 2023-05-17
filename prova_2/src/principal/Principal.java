@@ -13,9 +13,7 @@ public class Principal {
 		Scanner entrada = new Scanner(System.in);
 		double a;//setar notas
 		Professor prof = new Professor("adan",294903491,"Programacao","manha",Professor.diciplina.FPOO);//professor nao mudar
-		Aluno al = new Aluno("298104","dan",12);//variaveis necessarias so add notas.
-		
-		
+		Aluno al = new Aluno("298104","dan",1241,Aluno.diciplina.LM);//variaveis necessarias so add notas.
 		
 		
 	}
