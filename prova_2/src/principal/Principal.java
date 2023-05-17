@@ -12,9 +12,11 @@ public class Principal {
 		String nome;// pega o nome
 		double a;// setar notas
 		int n;// escolha
-		Professor prof = new Professor("adan", 294903491, "Programacao", "manha", Professor.diciplina.FPOO);// professor
-																											// nao mudar
-		Aluno al = new Aluno("298104", "dan", 1241, Aluno.diciplina.LM);// variaveis necessarias so add notas.
+		Professor prof = new Professor("Eduardo", 294903491, "Programacao", "manha", Professor.diciplina.FPOO);// professor
+																												// //
+																												// nao
+																												// mudar
+		Aluno al = new Aluno("298104", "Adan", 1241, Aluno.diciplina.FPOO);// variaveis necessarias so add notas.
 		Turma tur = new Turma();
 
 		while (true) {
@@ -38,55 +40,124 @@ public class Principal {
 
 				case 1:
 
-					System.out.println("1.Adicionar Aluno");
-					System.out.println("2.Remover Aluno");
-					System.out.println("3.listar Aluno");
-					System.out.println("4.Editar Informacao");
-					System.out.println("5.Voltar");
-					n = entrada.nextInt();
+					while (true) {
 
-					if (n == 5) {
+						System.out.println("1.Adicionar Aluno");
+						System.out.println("2.Remover Aluno");
+						System.out.println("3.listar Aluno");
+						System.out.println("4.Editar Informacao");
+						System.out.println("5.Voltar");
+						n = entrada.nextInt();
 
-						System.out.println("Voltando");
-						break;
+						if (n == 5) {
+
+							System.out.println("Voltando");
+							break;
+
+						}
+
+						else {
+
+							switch (n) {
+
+							case 1:
+
+								System.out.println("Nome: ");
+								nome = entrada.next();
+								tur.addalunos(nome);
+
+								break;
+
+							case 2:
+
+								System.out.println("Nome para remover: ");
+								nome = entrada.next();
+								tur.removealunos(nome);
+
+								break;
+
+							case 3:
+
+								System.out.println("Lista de alunos: ");
+								tur.tostring();
+
+								break;
+
+							case 4:
+
+								System.out.println("Editar informacao: ");
+								n = entrada.nextInt();
+								nome = entrada.next();
+								tur.alterarNota(n, nome);
+
+								break;
+
+							}
+
+						}
 
 					}
 
-					else {
+					break;
+				case 2:
 
-						switch (n) {
+					prof.tostring();
+					break;
 
-						case 1:
+				case 3:
 
-							System.out.println("Nome: ");
-							nome = entrada.next();
-							tur.addalunos(nome);
+					while (true) {
 
-							break;
+						System.out.println("1.Adicionar Nota");
+						System.out.println("2.Remover Nota");
+						System.out.println("3.listar Nota");
+						System.out.println("4.Calcular Media");
+						System.out.println("5.Voltar");
+						n = entrada.nextInt();
 
-						case 2:
-
-							System.out.println("Nome para remover: ");
-							nome = entrada.next();
-							tur.removealunos(nome);
-
-							break;
-
-						case 3:
-
-							System.out.println("Lista de alunos: ");
-							tur.tostring();
+						if (n == 5) {
 
 							break;
 
-						case 4:
+						} else {
 
-							System.out.println("Editar informacao: ");
-							n = entrada.nextInt();
-							nome = entrada.next();
-							tur.alterarNota(n, nome);
+							switch (n) {
 
-							break;
+							case 1:
+
+								System.out.println("Informe a primeira nota : ");
+								a = entrada.nextDouble();
+								al.setNota(a);
+								al.addnotas();
+
+								System.out.println("Informe a Segunda nota : ");
+								a = entrada.nextDouble();
+								al.setNota(a);
+								al.addnotas();
+
+								break;
+
+							case 2:
+
+								System.out.println("Informe a primeira nota : ");
+								a = entrada.nextDouble();
+								al.setNota(a);
+								al.removenotas();
+
+								break;
+
+							case 3:
+
+								al.listarnota();
+
+								break;
+
+							case 4:
+
+								al.listarmedia();
+								break;
+
+							}
 
 						}
 
@@ -97,6 +168,6 @@ public class Principal {
 			}
 
 		}
-
+		entrada.close();
 	}
 }

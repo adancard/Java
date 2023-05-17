@@ -16,6 +16,7 @@ public class Turma {
 	public void removealunos(String nome) {
 		
 		listadealunos.remove(nome);
+		
 	}
 	
 	
