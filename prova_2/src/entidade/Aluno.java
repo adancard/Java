@@ -98,6 +98,7 @@ public class Aluno extends pessoa {
 		System.out.println(descricao.getDescricao());
 		
 	}
+
 	
 	
 
