@@ -4,15 +4,17 @@ import java.util.ArrayList;
 
 
 public class Aluno extends pessoa {
-	
+	//declarando variaveis
 	private String codigo;
 	private double nota;
 	private double media=0; 
+	//criando array list de tipo double
 	private ArrayList<Double> notas = new ArrayList<Double>();
+	//declarando metodo enum
 	private diciplina descricao;
 
 	
-
+	//construtor
 	public Aluno (String codigo,String nome,int cpf,diciplina descricao) {
 		
 		super(nome,cpf);
@@ -22,6 +24,7 @@ public class Aluno extends pessoa {
 		
 	}
 
+	//metodo para adicionar notasS
 	public void addnotas() {
 		
 		notas.add(nota);
@@ -29,20 +32,24 @@ public class Aluno extends pessoa {
 		
 	}
 	
-	public void removenotas() {
-		
-		notas.remove(nota);
-		media=media-nota;
-		
+	//metodo para remover nota dependendo do indice
+	public void removerNota(int indice){
+
+	    if(indice >= 0 && indice < notas.size()){
+
+	    	notas.remove(indice);
+	    } 
 	}
 	
+	//mostrar notas
 	public void listarnota() {
 		
 		for(int i = 0; i< notas.size(); i++) {
-			System.out.println(notas.get(i));
+		System.out.println(i+" "+notas.get(i));
 		}
 	}
 	
+	//fazer a media das notas
 	public void listarmedia() {
 		
 		
@@ -60,6 +67,7 @@ public class Aluno extends pessoa {
 		
 	}
 
+	//gets e sets
 	public double getNota() {
 		return nota;
 	}
@@ -72,6 +80,7 @@ public class Aluno extends pessoa {
 		return codigo;
 	}
 	
+	//metodo enum
 	public enum diciplina {
 
 		FPOO("Programacao de orientacao de objeto"), LM("Linguagem de Marcacao"), SO("Sistema Operacional"),

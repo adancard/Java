@@ -2,9 +2,11 @@ package entidade;
 
 public abstract class pessoa {
 	
+	//criando variaveis para todos
 	protected String nome;
 	protected int cpf;
 	
+	//construtor
 	public pessoa (String nome, int cpf) {
 		
 		this.nome=nome;
@@ -12,6 +14,7 @@ public abstract class pessoa {
 		
 	}
 	
+	//gets e sets
 	public String getNome() {
 		return nome;
 	}
@@ -28,6 +31,7 @@ public abstract class pessoa {
 		this.cpf = cpf;
 	}
 
+	//metodo para mostrar
 	public abstract void tostring();
 
 

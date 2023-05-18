@@ -2,10 +2,13 @@ package entidade;
 
 public class Professor extends pessoa {
 
+	//declarando variaveis
 	private String espe;
 	private String perio;
+	//declarando metodo enum
 	private diciplina descricao;
 
+	//construtor
 	public Professor(String nome, int cpf, String espe, String perio,diciplina descricao) {
 
 		super(nome, cpf);
@@ -15,6 +18,7 @@ public class Professor extends pessoa {
 
 	}
 
+	//metodo enum
 	public enum diciplina {
 
 		FPOO("Programacao de orientacao de objeto"), LM("Linguagem de Marcacao"), SO("Sistema Operacional"),

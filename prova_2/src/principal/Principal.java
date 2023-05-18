@@ -12,13 +12,11 @@ public class Principal {
 		String nome;// pega o nome
 		double a;// setar notas
 		int n;// escolha
-		Professor prof = new Professor("Eduardo", 294903491, "Programacao", "manha", Professor.diciplina.FPOO);// professor
-																												// //
-																												// nao
-																												// mudar
+		Professor prof = new Professor("Eduardo", 294903491, "Programacao", "manha", Professor.diciplina.FPOO);// professor nao mudar
 		Aluno al = new Aluno("298104", "Adan", 1241, Aluno.diciplina.FPOO);// variaveis necessarias so add notas.
 		Turma tur = new Turma();
 
+		//looping para fazer as perguntas
 		while (true) {
 
 			System.out.println("1.Turma");
@@ -37,7 +35,8 @@ public class Principal {
 			else {
 
 				switch (n) {
-
+				
+				//adicionar alunos na turma
 				case 1:
 
 					while (true) {
@@ -47,6 +46,7 @@ public class Principal {
 						System.out.println("3.listar Aluno");
 						System.out.println("4.Editar Informacao");
 						System.out.println("5.Voltar");
+						System.out.println(" ");
 						n = entrada.nextInt();
 
 						if (n == 5) {
@@ -79,16 +79,17 @@ public class Principal {
 							case 3:
 
 								System.out.println("Lista de alunos: ");
-								tur.tostring();
+								tur.mostrarAlunos();
 
 								break;
 
 							case 4:
 
-								System.out.println("Editar informacao: ");
+								System.out.println("Informe posicao: ");
 								n = entrada.nextInt();
+								System.out.println("Informe nome: ");
 								nome = entrada.next();
-								tur.alterarNota(n, nome);
+								tur.alterarNome(n, nome);
 
 								break;
 
@@ -99,23 +100,27 @@ public class Principal {
 					}
 
 					break;
+				
+				//mostrar professor
 				case 2:
 
 					prof.tostring();
 					break;
 
+				//adicionar nota 
 				case 3:
 
 					while (true) {
 
 						System.out.println("1.Adicionar Nota");
 						System.out.println("2.Remover Nota");
-						System.out.println("3.listar Nota");
-						System.out.println("4.Calcular Media");
-						System.out.println("5.Voltar");
+						System.out.println("3.Alterar Nota");
+						System.out.println("4.listar Nota");
+						System.out.println("5.Calcular Media");
+						System.out.println("6.Voltar");
 						n = entrada.nextInt();
 
-						if (n == 5) {
+						if (n == 6) {
 
 							break;
 
@@ -130,29 +135,22 @@ public class Principal {
 								al.setNota(a);
 								al.addnotas();
 
-								System.out.println("Informe a Segunda nota : ");
-								a = entrada.nextDouble();
-								al.setNota(a);
-								al.addnotas();
-
 								break;
 
 							case 2:
-
-								System.out.println("Informe a primeira nota : ");
-								a = entrada.nextDouble();
-								al.setNota(a);
-								al.removenotas();
+								System.out.println("Informe a posicao: ");
+								n= entrada.nextInt();
+								al.removerNota(n);
 
 								break;
 
-							case 3:
+							case 4:
 
 								al.listarnota();
 
 								break;
 
-							case 4:
+							case 5:
 
 								al.listarmedia();
 								break;
