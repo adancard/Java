@@ -143,6 +143,17 @@ public class Principal {
 								al.removerNota(n);
 
 								break;
+								
+								
+							case 3:
+								
+								System.out.println("informe a posiçao da nota: ");
+								n=entrada.nextInt();
+								System.out.println("Informe a nova nota: ");
+								a=entrada.nextDouble();
+								al.alterarNota(n, a);
+								
+								
 
 							case 4:
 

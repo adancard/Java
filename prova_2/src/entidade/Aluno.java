@@ -41,6 +41,15 @@ public class Aluno extends pessoa {
 	    } 
 	}
 	
+	//alterar nome dependo do indice
+	public void alterarNota(int indice,double nota){
+
+	    if(indice >= 0 && indice < notas.size()){
+
+	    	notas.set(indice, nota);
+	    } 
+	}
+	
 	//mostrar notas
 	public void listarnota() {
 		
