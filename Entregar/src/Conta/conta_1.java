@@ -2,13 +2,17 @@ package Conta;
 
 public class conta_1 {
 
+	// declarando variaveis
 	private double saldo;
 	private int limite;
 	private int codigo;
 
+	// iniciando um construtor vazio
 	public conta_1(double saldo, int limite, int codigo) {
 	}
 
+	// Metodo de sacar dinheiro ele vai ver se eh possivel sacar se nao ira mostrar
+	// um mensagem de erro
 	public void sacar(double valor) throws ContaExcecao {
 
 		if (valor > limite) {
@@ -25,6 +29,7 @@ public class conta_1 {
 
 	}
 
+	// Metodo de depositar
 	public void depositar(double valor) {
 
 		saldo = saldo + valor;
@@ -34,6 +39,7 @@ public class conta_1 {
 
 	}
 
+	// gets e sets
 	public double getSaldo() {
 		return saldo;
 	}
