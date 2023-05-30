@@ -12,11 +12,12 @@ public class Parte_2 {
 
 		// declarando variaveis
 		int n;
+		double n1;
 		Scanner entrada = new Scanner(System.in);
 		conta_1 conta = new conta_1(0, 0, 0);
 		conta.setCodigo(1);
 
-		System.out.println("digite o codigo de acesso");
+		System.out.println("digite o codigo de acesso (1): ");
 		n = entrada.nextInt();
 
 		// Vai chegar se o codigo de acesso eh igual o predefinido
@@ -29,20 +30,33 @@ public class Parte_2 {
 			// Mostra o saldo Atual sem motificaçao
 			System.out.println("\n" + "Saldo atual:" + conta.getSaldo() + "\n");
 
-			// Ele vai tenta sacar 700 um valor que nao eh possivel porque o limite eh 200
-			try {
+			// Prende o usuario ate ele digitar um valor de saque menor que o limite 
+			do {
 
-				conta.sacar(700);
+				// Pergunta de quanto vai querer sacar
+				System.out.println("digite valor para sacar");
+				n1 = entrada.nextDouble();
 
-				// Aqui vai mostrar a mensagem de erro se o "try" nao funcionar
-			} catch (ContaExcecao e) {
+				try {
 
-				System.out.println("Erro: " + e.getMessage());
+					// faz o teste logico se o valor for maior que o limite ele vai da erro se nao
+					// faz a conta sem nenhum problema
+					conta.sacar(n1);
 
-			}
+				// Aqui vai mostrar a mensagem de erro se o "try" nao for verdadeiro
+				} catch (ContaExcecao e) {
+
+					System.out.println("Erro: " + e.getMessage());
+
+				}
+
+			// loop ate o valor for menor que o limite
+			} while (n1 > conta.getLimite());
 
 			// O quando vai ser depositado
-			conta.depositar(100);
+			System.out.println("digite valor para Depositar");
+			n1 = entrada.nextDouble();
+			conta.depositar(n1);
 
 			// Se ele colocar um codigo que nao eh o certo vai mostar a mensagem "Codigo
 			// invalido"
@@ -50,6 +64,9 @@ public class Parte_2 {
 
 			System.out.println("Codigo invalido");
 		}
+
+		// fechando o scanner
+		entrada.close();
 	}
 
 }

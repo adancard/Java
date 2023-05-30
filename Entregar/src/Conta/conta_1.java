@@ -15,11 +15,13 @@ public class conta_1 {
 	// um mensagem de erro
 	public void sacar(double valor) throws ContaExcecao {
 
+		//Teste logico se o valor for maior que o limite ele vai da erro
 		if (valor > limite) {
 
 			throw new ContaExcecao(
 					"valor maior que o limite\n" + "Limite: " + limite + "\n" + "Valor a sacar: " + valor + "\n");
-
+			
+		//Se o valor for menor ele vai fazer a conta de saldo menos o valor	
 		} else {
 
 			saldo = saldo - valor;
