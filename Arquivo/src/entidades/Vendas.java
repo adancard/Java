@@ -46,7 +46,7 @@ public class Vendas {
 	/**
 	 * 
 	 * Metodo para poder criar um arquivo chamado "vendas" e escrever nele as
-	 * informaçoes que sao necessarias
+	 * informaï¿½oes que sao necessarias
 	 * 
 	 */
 
@@ -55,7 +55,7 @@ public class Vendas {
 		try {
 			FileWriter fileWriter = new FileWriter("vendas.csv", true);
 			fileWriter.write("\n"+"Numero da venda: " + numeroV + ", \n" + "Nome do produto: " + NomeV + ", \n" + "Quantidade: "
-					+ quantidade + ", \n" + "Preco: " + preco + ", \n" + formasdepagamento + ", \n");
+					+ quantidade + ", \n" + "Preco: " + preco + ", \n" + formasdepagamento + "\n");
 			fileWriter.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Arquivo nao encontrado: " + e.getMessage());
