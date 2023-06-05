@@ -7,6 +7,13 @@ public class Lerlouja {
 
 	public static void main(String[] args) {
 
+		/**
+		 * 
+		 * Codigo para conseguir ler o arquivo que nos criamos no programa 
+		 * anterior
+		 * 
+		 */
+
 		try {
 			FileReader fileReader = new FileReader("vendas.csv");
 			int i;
