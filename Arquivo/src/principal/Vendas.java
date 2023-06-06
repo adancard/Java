@@ -1,7 +1,7 @@
 package principal;
 
-import java.util.Scanner;
 
+import java.util.Scanner;
 import entidades.Produto;
 import entidades.Produtos;
 
@@ -11,17 +11,11 @@ public class Vendas {
 		Produto prod = new Produto();
 		Produtos prods = new Produtos();
 		Scanner entrada = new Scanner(System.in);
-		int n = -1,g=-1;
+		int n = -1, opcao = -1;
 		String nome;
 		double preco;
 
-		while (true) {
-
-			if (g == 6) {
-
-				break;
-
-			}
+		while (opcao != 6) {
 
 			System.out.println();
 			System.out.println("--- MENU PRINCIPAL ---");
@@ -31,12 +25,14 @@ public class Vendas {
 			System.out.println("4 - Remover Produto");
 			System.out.println("5 - Gravar em um arquivo");
 			System.out.println("6 - Sair");
-			g = entrada.nextInt();
+			opcao = entrada.nextInt();
 
-			switch (g) {
+			switch (opcao) {
 
 			case 1:
 
+				System.out.println();
+				System.out.println("--- ADICIONAR PRODUTO ---");
 				System.out.println("Codigo do produto");
 				n = entrada.nextInt();
 				prod.setCodigo(n);
@@ -59,6 +55,8 @@ public class Vendas {
 
 			case 3:
 
+				System.out.println();
+				System.out.println("--- EDITAR PRODUTO ---");
 				System.out.println("Informe o codigo: ");
 				n = entrada.nextInt();
 				prod.setCodigo(n);
@@ -75,6 +73,8 @@ public class Vendas {
 
 			case 4:
 
+				System.out.println();
+				System.out.println("--- REMOVER PRODUTO ---");
 				System.out.println("Informe o codigo: ");
 				n = entrada.nextInt();
 				prod.setCodigo(n);
