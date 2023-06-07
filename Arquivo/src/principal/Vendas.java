@@ -1,6 +1,6 @@
 package principal;
 
-
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import entidades.Produto;
 import entidades.Produtos;
@@ -17,15 +17,22 @@ public class Vendas {
 
 		while (opcao != 6) {
 
-			System.out.println();
-			System.out.println("--- MENU PRINCIPAL ---");
-			System.out.println("1 - Adicionar Produto");
-			System.out.println("2 - Listar Produto");
-			System.out.println("3 - Editar Produto");
-			System.out.println("4 - Remover Produto");
-			System.out.println("5 - Gravar em um arquivo");
-			System.out.println("6 - Sair");
-			opcao = entrada.nextInt();
+			try {
+				System.out.println();
+				System.out.println("--- MENU PRINCIPAL ---");
+				System.out.println("1 - Adicionar Produto");
+				System.out.println("2 - Listar Produto");
+				System.out.println("3 - Editar Produto");
+				System.out.println("4 - Remover Produto");
+				System.out.println("5 - Gravar em um arquivo");
+				System.out.println("6 - Sair");
+				opcao = entrada.nextInt();
+			} catch (InputMismatchException e) {
+
+				entrada.nextLine();
+				System.out.println("colocar numero" + e.getMessage());
+
+			}
 
 			switch (opcao) {
 
