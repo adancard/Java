@@ -1,5 +1,6 @@
 package principal;
 
+//bibliotecas importadas
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import entidades.Produto;
@@ -8,6 +9,7 @@ import entidades.Produtos;
 public class Vendas {
 
 	public static void main(String[] args) {
+		// variaveis declaradas
 		Produto prod = new Produto();
 		Produtos prods = new Produtos();
 		Scanner entrada = new Scanner(System.in);
@@ -15,8 +17,17 @@ public class Vendas {
 		String nome;
 		double preco;
 
+		/**
+		 * lado enquanto que serve para prender o usuario para ele conseguir fazer
+		 * varias tarefas ate digitar o numero para sair
+		 */
 		while (opcao != 6) {
 
+			/**
+			 * 
+			 * painel do menu principal e com tratamento de erro que so pode digitar numero
+			 * 
+			 */
 			try {
 				System.out.println();
 				System.out.println("--- MENU PRINCIPAL ---");
@@ -36,6 +47,13 @@ public class Vendas {
 
 			switch (opcao) {
 
+			/**
+			 * 
+			 * opcao 1 que deixar add um produto tem que informa o codigo dele o nome e o
+			 * preco
+			 * 
+			 */
+
 			case 1:
 
 				System.out.println();
@@ -54,12 +72,24 @@ public class Vendas {
 
 				break;
 
+			/**
+			 * 
+			 * opcao 2 que serve para listar os produtos e se a lista estiver vazia ele nao
+			 * ira mostrar que existe nada na lista
+			 * 
+			 */
+
 			case 2:
 
 				prods.Listar();
 
 				break;
 
+			/**
+			 * 
+			 * opcao 3 para editar um produto listado usando o codigo dele
+			 * 
+			 */
 			case 3:
 
 				System.out.println();
@@ -78,6 +108,12 @@ public class Vendas {
 
 				break;
 
+			/**
+			 * 
+			 * opcao 4 remover produto usando o codigo dele
+			 * 
+			 */
+
 			case 4:
 
 				System.out.println();
@@ -89,6 +125,12 @@ public class Vendas {
 				prods.remover(n);
 
 				break;
+
+			/**
+			 * 
+			 * opcao 5 para gravar toda a lista em um arquivo de exel
+			 * 
+			 */
 
 			case 5:
 

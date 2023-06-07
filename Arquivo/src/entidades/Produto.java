@@ -2,10 +2,12 @@ package entidades;
 
 public class Produto {
 	
+	//declarando variaveis
 	private String nome;
 	private int codigo;
 	private double preco;
 	
+	//metodo para mostar o codigo,nome e preco dos produto registrado
 	public void Mostar() {
 		
 		System.out.println("Codigo: "+getCodigo());
@@ -15,6 +17,8 @@ public class Produto {
 	}
 	
 	
+	
+	//gets and sets
 	public String getNome() {
 		return nome;
 	}
