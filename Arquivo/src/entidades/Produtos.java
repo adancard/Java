@@ -1,6 +1,5 @@
 package entidades;
 
-//bibliotecas importadas
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,17 +7,14 @@ import java.util.ArrayList;
 
 public class Produtos {
 
-	// iniciando a lista de produtos
 	protected ArrayList<Produto> produtos;
 
-	// construtor
 	public Produtos() {
 
 		this.produtos = new ArrayList();
 
 	}
 
-	// metodo para adicionar os produtos
 	public void add(Produto produto) {
 
 		produtos.add(produto);
@@ -27,13 +23,6 @@ public class Produtos {
 
 	}
 
-	/**
-	 * 
-	 * metodo para listar os produtos se a lista estiver vazia ele ira mostrar que
-	 * esta vazia se nao ira mostrar o conteudo da lista
-	 * 
-	 */
-	
 	public void Listar() {
 
 		if (produtos.isEmpty()) {
@@ -58,13 +47,6 @@ public class Produtos {
 
 	}
 
-	/**
-	 * 
-	 * remove o produto dependo do codigo que foi colocado a ele
-	 * 
-	 * @param codigo
-	 */
-	
 	public void remover(int codigo) {
 
 		if (produtos.isEmpty()) {
@@ -93,15 +75,6 @@ public class Produtos {
 
 	}
 
-	
-	/**
-	 * 
-	 * edita um produto existente dependendo do codigo que foi dado 
-	 * 
-	 * @param codigo
-	 * @param nome
-	 * @param preco
-	 */
 	public void Editar(int codigo, String nome, double preco) {
 
 		if (produtos.isEmpty()) {
@@ -131,12 +104,6 @@ public class Produtos {
 
 	}
 
-	
-	/**
-	 * 
-	 * grava a lista em um arquivo de excel
-	 * 
-	 */
 	public void gravararquivo() {
 
 		if (produtos.isEmpty()) {
