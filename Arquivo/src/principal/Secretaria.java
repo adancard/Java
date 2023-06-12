@@ -5,6 +5,7 @@ package principal;
  * Importando bibliotecas de erro e classes criadas
  * 
  */
+
 import entidades.Turma;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -34,6 +35,7 @@ public class Secretaria {
 			 */
 
 			try {
+				System.out.println("-------MENU-----");
 				System.out.println("1. Adicionar aluno");
 				System.out.println("2. Editar aluno");
 				System.out.println("3. Remover aluno");
@@ -69,6 +71,8 @@ public class Secretaria {
 				case 1:
 
 					try {
+						
+						System.out.println("----ADICIONAR ALUNO----");
 						System.out.println("Numero da matricula: ");
 						matricula = entrada.nextInt();
 						a.setMatricula(matricula);
@@ -99,6 +103,8 @@ public class Secretaria {
 				case 2:
 
 					try {
+						
+						System.out.println("----EDITAR ALUNO----");
 						System.out.println("Numero da matricula: ");
 						matricula = entrada.nextInt();
 						a.setMatricula(matricula);
@@ -129,6 +135,8 @@ public class Secretaria {
 				case 3:
 
 					try {
+						
+						System.out.println("----REMOVER ALUNO----");
 						System.out.println("Numero da matricula: ");
 						matricula = entrada.nextInt();
 						a.setMatricula(matricula);
@@ -170,8 +178,8 @@ public class Secretaria {
 
 				/**
 				 * 
-				 * Se o usuario digitar um numero fora de 0 e 6 ele ira mostrar que a opçao esta
-				 * invalida
+				 * Se o usuario digitar um numero fora de 0 e 6 ele ira mostrar que a opçao
+				 * esta invalida
 				 * 
 				 */
 
@@ -183,6 +191,7 @@ public class Secretaria {
 				}
 
 			}
+			entrada.close();
 
 		}
 

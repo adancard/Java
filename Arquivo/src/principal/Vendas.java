@@ -1,6 +1,5 @@
 package principal;
 
-
 import java.util.Scanner;
 import entidades.Produto;
 import entidades.Produtos;
@@ -87,9 +86,15 @@ public class Vendas {
 
 				prods.gravararquivo();
 
+			case 6:
+
+				System.out.println("Saindo...");
+
 			}
 
 		}
+
+		entrada.close();
 
 	}
 
