@@ -1,10 +1,9 @@
 package entidades;
 
-import java.io.BufferedReader;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,6 +11,7 @@ import java.util.Scanner;
 public class Sistema_tarefa {
 
 	protected ArrayList<Tarefa> tares;
+	private String texto;
 
 	public Sistema_tarefa() {
 
@@ -19,37 +19,25 @@ public class Sistema_tarefa {
 
 	}
 
-	public void Add(int codigo, Tarefa a) {
+	public void Add(Tarefa a) {
 
-		if (a.getId() == codigo) {
+		tares.add(a);
 
-			System.out.println("Tarefa ja Adicionada");
+		try (FileOutputStream fout = new FileOutputStream("Tarefas.csv");
+				BufferedOutputStream bout = new BufferedOutputStream(fout)) {
 
-		} else {
+			
 
-			tares.add(a);
+			System.out.println("Arquivo criado e" + "\n" + "mensagem escrita com sucesso!");
+		} catch (FileNotFoundException e) {
+			System.err.println("Captura de Excecao: " + e.getMessage());
+		} catch (IOException e) {
+			System.err.println("Ocorreu um erro: " + e.getMessage());
 
-			try {
-				FileWriter fileWriter = new FileWriter("Tarefas.csv", true);
-				for (Tarefa b : this.tares) {
-
-					fileWriter.write("ID: " + b.getId() + "\n" + "Tarefa: " + b.getNome() + "\n" + "Descricao: "
-							+ b.getDescricao() + "\n" + "Tempo para fazer: " + b.getTempo());
-					fileWriter.close();
-				}
-
-				System.out.println("Arquivo salvo com sucesso");
-
-			} catch (FileNotFoundException e) {
-				System.out.println("Arquivo nao encontrado: " + e.getMessage());
-			} catch (IOException e) {
-				System.out.println("Excecao: " + e.getMessage());
-			}
 		}
-
 	}
 
-	public void Remover(int codigo, Tarefa a) {
+	public void Remover(int codigo) {
 
 		if (tares.isEmpty()) {
 
@@ -57,23 +45,26 @@ public class Sistema_tarefa {
 
 		} else {
 
-			if (a.getId() == codigo) {
+			for (Tarefa a : this.tares) {
 
-				tares.remove(a);
-				atualizar();
+				if (a.getId() == codigo) {
 
-			} else {
+					tares.remove(a);
+					atualizar();
 
-				System.out.println("Codigo incorreto");
+				} else {
+
+					System.out.println("Codigo incorreto");
+
+				}
 
 			}
 
 		}
 
 	}
-	
+
 	public void listar() {
-		
 
 		if (tares.isEmpty()) {
 
@@ -94,33 +85,35 @@ public class Sistema_tarefa {
 			}
 
 		}
-		
+
 	}
-	
-	public void carregar() {;
-	
-	}
-	
-	
-	public void atualizar() {
-		
-		try {
-			FileWriter fileWriter = new FileWriter("Tarefas.csv", true);
-			for (Tarefa b : this.tares) {
 
-				fileWriter.write("ID: " + b.getId() + "\n" + "Tarefa: " + b.getNome() + "\n" + "Descricao: "
-						+ b.getDescricao() + "\n" + "Tempo para fazer: " + b.getTempo());
-				fileWriter.close();
-			}
+	public void carregar() throws FileNotFoundException {
 
-			System.out.println("Arquivo salvo com sucesso");
-
-		} catch (FileNotFoundException e) {
-			System.out.println("Arquivo nao encontrado: " + e.getMessage());
-		} catch (IOException e) {
-			System.out.println("Excecao: " + e.getMessage());
+		Scanner s = new Scanner(new File("Tarefas.csv"));
+		ArrayList<String> list = new ArrayList<String>();
+		while (s.hasNext()) {
+			list.add(s.next());
 		}
-	
+		s.close();
+		atualizar();
+
+	}
+
+	public void atualizar() {
+
+		try (FileOutputStream fout = new FileOutputStream("Tarefas.csv");
+				BufferedOutputStream bout = new BufferedOutputStream(fout)) {
+			
+		
+
+			System.out.println("Arquivo criado e" + "\n" + "mensagem escrita com sucesso!");
+		} catch (FileNotFoundException e) {
+			System.err.println("Captura de Excecao: " + e.getMessage());
+		} catch (IOException e) {
+			System.err.println("Ocorreu um erro: " + e.getMessage());
+
+		}
 	}
 
 }

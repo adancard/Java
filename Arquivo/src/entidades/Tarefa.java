@@ -53,5 +53,4 @@ public class Tarefa {
 	public void setTempo(String tempo) {
 		this.tempo = tempo;
 	}
-
 }
