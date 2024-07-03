@@ -1,34 +1,38 @@
 package For;
+
 import java.util.Scanner;
 
 public class primo {
 
 	public static void main(String[] args) {
 		Scanner jorge = new Scanner(System.in);
-		int n1,n2,cont;
-		
+		int n1, n2, cont, multi = 0;
+
 		System.out.println("informe um numero");
-		n1=jorge.nextInt();
-		System.out.println("informe o segundo numero");
-		n2=jorge.nextInt();
+		n1 = jorge.nextInt();
 		jorge.close();
-		
-		if(n2>n1) {
-			
-		for(cont=n1;cont<= n2; cont++) {
-			if(cont%2 != 0 || cont == 2) {
-				System.out.printf("%d\n",cont);
-			}	
+
+		for (n2 = 1; n2 <= n1; n2++) {
+
+			if (n1 % n2 == 0) {
+
+				multi++;
+
+			}
+
+		}
+
+		System.out.println("Total de Multiplos:" + multi);
+		System.out.println("Resutaldo :" + n1);
+
+		if (multi <= 2) {
+
+			System.out.println("Primo");
+
+		} else {
+
+			System.out.println("Nao Primo");
+
 		}
 	}
-		else {
-			for(cont=n2;cont<= n1; cont++) {
-				if(cont%2 != 0 || cont == 2) {
-					System.out.printf("%d\n",cont);
-		 }
-		}
-       }
-	  }
-	 }
-
-
+}
